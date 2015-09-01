@@ -3,38 +3,37 @@
 #include<fstream>
 using namespace std;
 int main(){
-    struct Tmark                         //¿¼ÊÔ³É¼¨
-	{      float pol;                    //ÕşÖÎ
-           float chn;                    //ÓïÎÄ
-           float eng;                    //Ó¢Óï
-           float com;                    //¼ÆËã»ú
-           float oral;                   //¿ÚÊÔ
+    struct Tmark                         //è€ƒè¯•æˆç»©
+	{      float pol;                    //æ”¿æ²»
+           float chn;                    //è¯­æ–‡
+           float eng;                    //è‹±è¯­
+           float com;                    //è®¡ç®—æœº
+           float oral;                   //å£è¯•
 	};
-    struct Tmarks                        //Ó¦Æ¸ÕßĞÅÏ¢ºÍ¿¼ÊÔ³É¼¨
-	{       char name[20];               //ĞÕÃû
-            float Sage;                  //ÄêÁä·Ö
-            float Srecord;               //Ñ§Àú·Ö
-            float Swlen;                 //¹¤×÷¾­Àú·Ö
-            Tmark mark;                  //¿¼ÊÔ³É¼¨
-            float total;                 //×Ü·Ö
+    struct Tmarks                        //åº”è˜è€…ä¿¡æ¯ä¸æˆç»©
+	{       char name[20];               //å§“å
+            float Sage;                  //å¹´é¾„åˆ†
+            float Srecord;               //å­¦å†åˆ†
+            float Swlen;                 //å·¥ä½œç»å†åˆ†
+            Tmark mark;                  //è€ƒè¯•æˆç»©
+            float total;                 //æ€»åˆ†
 	};
-    struct Tinform                       //Ó¦Æ¸Õß¸öÈËĞÅÏ¢       
-{       char name[20];               //ĞÕÃû
-        char sex;                    //ĞÔ±ğ
-        float age; 	                 //ÄêÁä
-		char schoolrecord;           //Ñ§Àú
-        float worklen;               //ÈÎ¿Æ¼¶¸É²¿ÄêÏŞ
-        char wordsite[60];           //ÏÖ¹¤×÷µ¥Î»
-		Tmark mark;                  //¿¼ÊÔ³É¼¨
+    struct Tinform                       //åº”è˜è€…ä¸ªäººä¿¡æ¯     
+{       char name[20];               //å§“å
+        char sex;                    //æ€§åˆ«
+        float age; 	                 //å¹´é¾„
+		char schoolrecord;           //å­¦å†
+        float worklen;               //ä»»ç§‘çº§å¹²éƒ¨å¹´é™
+        char wordsite[60];           //ç°å·¥ä½œå•ä½
+		Tmark mark;                  //è€ƒè¯•æˆç»©
 };
     Tinform people[50];
 	int i,j,num;
-	cout<<"Ñ§Àú  Ë¶Ê¿ÓÃm±íÊ¾ ²©Ê¿ÓÃd±íÊ¾ ±¾¿ÆÓÃu±íÊ¾ ÆäËûÓÃo±íÊ¾"<<endl;
-	cout<<"ĞÔ±ğ ÄĞÓÃm±íÊ¾ Å®ÓÃf±íÊ¾"<<endl;
-	cout<<"Ó¦Æ¸ÈËÊıÎª£º"<<endl;
+	cout<<"æ‹›è˜å¹²éƒ¨å½•å–ç³»ç»Ÿ"<<endl;
+	cout<<"è¯·è¾“å…¥åº”è˜è€…æ€»äººæ•°"<<endl;
 	cin>>num;
 	ifstream ifile;
-	ifile.open("d:\\Ó¦Æ¸Õß¸öÈËĞÅÏ¢.txt");
+	ifile.open("d:\\åº”è˜è€…ä¸ªäººä¿¡æ¯.txt");
 	for(j=0;j<num;j++){
 		ifile>>people[j].name;
 		ifile>>people[j].sex;
@@ -85,54 +84,54 @@ int main(){
 		if(noswap)break;
 	}
 	ofstream ofile;
-	ofile.open("d:\\³É¼¨×Ü±í.txt");
+	ofile.open("d:\\æˆç»©æ€»è¡¨.txt");
 	for(i=0;i<num;i++){
 		ofile<<endl;
 		ofile<<altogether[i].name<<endl;
-		ofile<<"ÕşÖÎ¿¼ÊÔ³É¼¨£º"<<'\t'<<altogether[i].mark.pol<<endl;
-        ofile<<"ÓïÎÄ¿¼ÊÔ³É¼¨£º"<<'\t'<<altogether[i].mark.chn<<endl;
-        ofile<<"Ó¢Óï¿¼ÊÔ³É¼¨£º"<<'\t'<<altogether[i].mark.eng<<endl;
-        ofile<<"¼ÆËã»ú¿¼ÊÔ³É¼¨£º"<<'\t'<<altogether[i].mark.com<<endl;
-        ofile<<"¿ÚÊÔ³É¼¨£º"<<'\t'<<altogether[i].mark.oral<<endl;
-        ofile<<"ÄêÁä·Ö£º"<<'\t'<<altogether[i].Sage<<endl;
-        ofile<<"Ñ§Àú·Ö"<<'\t'<<altogether[i].Srecord<<endl;
-        ofile<<"¹¤×÷¾­Àú·Ö"<<'\t'<<altogether[i].Swlen<<endl;
+		ofile<<"æ”¿æ²»æˆç»©"<<'\t'<<altogether[i].mark.pol<<endl;
+        ofile<<"è¯­æ–‡æˆç»©"<<'\t'<<altogether[i].mark.chn<<endl;
+        ofile<<"è‹±è¯­æˆç»©"<<'\t'<<altogether[i].mark.eng<<endl;
+        ofile<<"è®¡ç®—æœºæˆç»©"<<'\t'<<altogether[i].mark.com<<endl;
+        ofile<<"å£è¯•æˆç»©"<<'\t'<<altogether[i].mark.oral<<endl;
+        ofile<<"å¹´é¾„åˆ†"<<'\t'<<altogether[i].Sage<<endl;
+        ofile<<"å­¦å†åˆ†"<<'\t'<<altogether[i].Srecord<<endl;
+        ofile<<"å·¥ä½œç»å†åˆ†"<<'\t'<<altogether[i].Swlen<<endl;
 	}
 	ofile.close();
-	ofile.open("d:\\Â¼È¡Í¨ÖªÊé1.txt");
-	ofile<<"Â¼È¡Í¨ÖªÊé"<<endl;
-	ofile<<altogether[0].name<<"±»Â¼È¡"<<endl;
+	ofile.open("d:\\å½•å–é€šçŸ¥ä¹¦.txt");
+	ofile<<"å½•å–é€šçŸ¥ä¹¦"<<endl;
+	ofile<<altogether[0].name<<"è¢«å½•å–"<<endl;
 	ofile.close();
-	ofile.open("d:\\Â¼È¡Í¨ÖªÊé2.txt");
-	ofile<<"Â¼È¡Í¨ÖªÊé"<<endl;
-	ofile<<altogether[1].name<<"±»Â¼È¡"<<endl;
+	ofile.open("d:\\å½•å–é€šçŸ¥ä¹¦2.txt");
+	ofile<<"å½•å–é€šçŸ¥ä¹¦"<<endl;
+	ofile<<altogether[1].name<<"è¢«å½•å–"<<endl;
 	ofile.close();
-	ofile.open("d:\\Â¼È¡Í¨ÖªÊé3.txt");
-	ofile<<"Â¼È¡Í¨ÖªÊé"<<endl;
-	ofile<<altogether[2].name<<"±»Â¼È¡"<<endl;
+	ofile.open("d:\\å½•å–é€šçŸ¥ä¹¦3.txt");
+	ofile<<"å½•å–é€šçŸ¥ä¹¦"<<endl;
+	ofile<<altogether[2].name<<"è¢«å½•å–"<<endl;
 	ofile.close();
-	ofile.open("d:\\Â¼È¡Í¨ÖªÊé4.txt");
-	ofile<<"Â¼È¡Í¨ÖªÊé"<<endl;
-	ofile<<altogether[3].name<<"±»Â¼È¡"<<endl;
+	ofile.open("d:\\å½•å–é€šçŸ¥ä¹¦4.txt");
+	ofile<<"å½•å–é€šçŸ¥ä¹¦"<<endl;
+	ofile<<altogether[3].name<<"è¢«å½•å–"<<endl;
 	ofile.close();
-	ofile.open("d:\\Â¼È¡Í¨ÖªÊé5.txt");
-	ofile<<"Â¼È¡Í¨ÖªÊé"<<endl;
-	ofile<<altogether[4].name<<"±»Â¼È¡"<<endl;
+	ofile.open("d:\\å½•å–é€šçŸ¥ä¹¦5.txt");
+	ofile<<"å½•å–é€šçŸ¥ä¹¦"<<endl;
+	ofile<<altogether[4].name<<"è¢«å½•å–"<<endl;
 	ofile.close();
 	char name[20];
-	cout<<"Òª²éÑ¯³É¼¨µÄ¿¼ÉúĞÕÃûÎª£º"<<endl;
+	cout<<"è¦æŸ¥è¯¢æˆç»©çš„è€ƒç”Ÿå§“åä¸ºï¼š"<<endl;
 	cin>>name;
 	for(i=0;i<num;i++){
 		if(!strcmp(name,altogether[i].name)){
 			cout<<altogether[i].name<<endl;
-		    cout<<"ÕşÖÎ¿¼ÊÔ³É¼¨£º"<<'\t'<<altogether[i].mark.pol<<endl;
-            cout<<"ÓïÎÄ¿¼ÊÔ³É¼¨£º"<<'\t'<<altogether[i].mark.chn<<endl;
-            cout<<"Ó¢Óï¿¼ÊÔ³É¼¨£º"<<'\t'<<altogether[i].mark.eng<<endl;
-            cout<<"¼ÆËã»ú¿¼ÊÔ³É¼¨£º"<<'\t'<<altogether[i].mark.com<<endl;
-            cout<<"¿ÚÊÔ³É¼¨£º"<<'\t'<<altogether[i].mark.oral<<endl;
-            cout<<"ÄêÁä·Ö£º"<<'\t'<<altogether[i].Sage<<endl;
-            cout<<"Ñ§Àú·Ö"<<'\t'<<altogether[i].Srecord<<endl;
-            cout<<"¹¤×÷¾­Àú·Ö"<<'\t'<<altogether[i].Swlen<<endl;
+		    cout<<"æ”¿æ²»è€ƒè¯•æˆç»©ï¼š"<<'\t'<<altogether[i].mark.pol<<endl;
+            cout<<"è¯­æ–‡è€ƒè¯•æˆç»©ï¼š"<<'\t'<<altogether[i].mark.chn<<endl;
+            cout<<"è‹±è¯­è€ƒè¯•æˆç»©ï¼š"<<'\t'<<altogether[i].mark.eng<<endl;
+            cout<<"è®¡ç®—æœºè€ƒè¯•æˆç»©ï¼š"<<'\t'<<altogether[i].mark.com<<endl;
+            cout<<"å£è¯•æˆç»©ï¼š"<<'\t'<<altogether[i].mark.oral<<endl;
+            cout<<"å¹´é¾„åˆ†ï¼š"<<'\t'<<altogether[i].Sage<<endl;
+            cout<<"å­¦å†åˆ†ï¼š"<<'\t'<<altogether[i].Srecord<<endl;
+            cout<<"å·¥ä½œç»å†åˆ†ï¼š"<<'\t'<<altogether[i].Swlen<<endl;
 			break;
 		}
 	}
